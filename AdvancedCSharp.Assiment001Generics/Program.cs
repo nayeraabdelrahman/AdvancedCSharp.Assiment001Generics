@@ -14,7 +14,6 @@ namespace AdvancedCSharp.Assiment001Generics
 
             // What is a generic class?
             //answer: a generic class is a class that uses a type parameter <T> to work with different data types without rewriting the code.
-
             // Why use generics?
             //answer:
             //Code Reusability: Reuse the same code with different types.
