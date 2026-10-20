@@ -24,7 +24,7 @@ namespace AdvancedCSharp.Assiment001Generics
             #region Q2 - Test Container<T>
 
             // Create and test Container<T>.
-
+            GenericBox<int> genericBox = new GenericBox<int>(20);
             #endregion
 
             #region Q3 - Test Pair<TKey, TValue>
