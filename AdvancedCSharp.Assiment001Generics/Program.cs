@@ -28,9 +28,10 @@ namespace AdvancedCSharp.Assiment001Generics
             #endregion
 
             #region Q3 - Test Pair<TKey, TValue>
-
+            //What are multiple type parameters?
+            //Answer: Multiple Type Parameters allow a generic class or method to use more than one type parameter.
             // Create and test Pair<TKey, TValue>.
-
+            Pair<int, string> pair = new Pair<int, string>(10, "SH001");
             #endregion
 
             #endregion
