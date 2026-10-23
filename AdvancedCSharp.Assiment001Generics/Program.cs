@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+using System.Security.Cryptography.X509Certificates;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace AdvancedCSharp.Assiment001Generics
@@ -42,15 +43,22 @@ namespace AdvancedCSharp.Assiment001Generics
             #region Q4 - Swap<T>
 
             // What is a generic method?
-            // Write and test Swap<T>.
+            //A Generic Method is a method that uses a type parameter <T> to work with different data types without rewriting the method.
 
+            // Write and test Swap<T>.
+            int a=10; int b=20;
+            Console.Write($"orginal numbers:{a} , {b} ");
+
+           Swap<int>(ref a, ref b);
+            Console.WriteLine($"after swap: {a},{b}");
             #endregion
 
             #region Q5 - FindMax<T>
 
             // Write and test a generic method
             // that finds the maximum value.
-
+            decimal[] arr = { 10, 15, 20,100,80 };
+            Console.WriteLine($"maximum value is:{FindMax<decimal>(arr)}");
             #endregion
 
             #endregion
@@ -61,8 +69,15 @@ namespace AdvancedCSharp.Assiment001Generics
             #region Q6 - IRepository<T>
 
             // What is a generic interface?
+            //A generic interface is an interface that uses type parameters <T> to define a reusable, type-safe contract for different data types.
             // Write IRepository<T>.
-
+            GenericRepository<Car> repository = new GenericRepository<Car>();
+            repository.additem(new Car("Toyota Corolla", 1280000));
+            repository.additem(new Car("BMW", 2500000));
+            foreach(var car in repository.GetAll())
+            {
+                Console.WriteLine(car.ToString());
+            }
             #endregion
 
             #endregion
@@ -216,14 +231,30 @@ namespace AdvancedCSharp.Assiment001Generics
         #region Q4 - Generic Swap<T> Method
 
         // Write Swap<T> here.
-
+        public static void Swap<T>(ref T a,ref T b)
+        {
+            T temp = a;
+            a = b;
+            b = temp;
+        }
         #endregion
 
 
         #region Q5 - Generic FindMax<T> Method
 
         // Write FindMax<T> here.
-
+        public static T FindMax<T>(T[] arr) where T : IComparable<T>
+        {
+            T max = arr[0];
+            for(int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i].CompareTo(max) > 0)
+                {
+                    max= arr[i];
+                }
+            }
+            return max;
+        }
         #endregion
     }
 }

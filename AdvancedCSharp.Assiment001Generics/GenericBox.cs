@@ -12,7 +12,6 @@ namespace AdvancedCSharp.Assiment001Generics
         // with Add and Get methods.
 
         #region Fields
-
         T boxValue;
         #endregion
 
