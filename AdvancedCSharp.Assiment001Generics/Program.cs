@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+using System.Reflection.Metadata;
 using System.Security.Cryptography.X509Certificates;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -57,7 +58,7 @@ namespace AdvancedCSharp.Assiment001Generics
 
             // Write and test a generic method
             // that finds the maximum value.
-            decimal[] arr = { 10, 15, 20,100,80 };
+            decimal[] arr = { 50, 15, 20,100,80 };
             Console.WriteLine($"maximum value is:{FindMax<decimal>(arr)}");
             #endregion
 
@@ -88,7 +89,10 @@ namespace AdvancedCSharp.Assiment001Generics
             #region Q7 - Struct Constraint
 
             // What is the struct constraint?
+            // The struct constraint restricts a generic type parameter T to non-nullable value types only, such as int, double, bool, and user-defined structs.
+            //Syntax: where T: struct
             // Write an example.
+            StructConstrain<int>structConstrain = new StructConstrain<int>(10);
 
             #endregion
 
@@ -102,6 +106,7 @@ namespace AdvancedCSharp.Assiment001Generics
             #region Q9 - New Constraint
 
             // What is the new() constraint?
+
             // Write an example.
 
             #endregion
